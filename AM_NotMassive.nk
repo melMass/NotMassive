@@ -4,7 +4,7 @@ push $cut_paste_input
 Group {
  name NotMassive
  onCreate "group = nuke.thisNode()\ngroup\['displayPercentage'].setFlag(0x00000002)\ngroup\['displayPercentage'].setRange(0,100)\ngroup\['displayPercentOffset'].setFlag(0x00000002)\ngroup\['displayPercentOffset'].setRange(0,100)\n\nv = group\['vertexStep'].value()\ngroup\['vertexStep'].setFlag(nuke.ALWAYS_SAVE)\ngroup\['vertexStep'].setDefaultValue(\[1])\ngroup\['vertexStep'].setValue(v)"
- knobChanged "import AM_NotMassive as nm\n\nprint \"nm knobchanged\"\n\ngroup = nuke.thisNode()\nknob = nuke.thisKnob()\n\nprint 'Knob: %s set to: %s' % (knob.name(), knob.value())\n\nif knob.name() == 'inputChange':\n    nm.respondToInputChange (group)\nelse:\n    nm.respondToKnobChange (knob,group)\n\nprint \"nm knobchanged\\n\""
+ knobChanged "import AM_NotMassive as nm\n\nprint(\"nm knobchanged\")\n\ngroup = nuke.thisNode()\nknob = nuke.thisKnob()\n\nprint('Knob: %s set to: %s' % (knob.name(), knob.value()))\n\nif knob.name() == 'inputChange':\n    nm.respondToInputChange (group)\nelse:\n    nm.respondToKnobChange (knob,group)\n\nprint(\"nm knobchanged\")\n"
  tile_color 0xff8b32ff
  label "No Crowd"
  note_font_size 18
